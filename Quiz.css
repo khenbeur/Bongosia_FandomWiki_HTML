@@ -1,0 +1,140 @@
+body{
+
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+     background-color: rgb(65, 62, 62);
+    transition: background 0.5s ease;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+.logo img{
+   height: 100%;
+   width: 100%;
+
+}
+header nav {
+    margin: 10px;
+    justify-content: flex-end;
+}
+header nav a{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 5px 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+header nav a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, gold, transparent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+header nav a:hover::after{
+    transform: scaleX(1);
+}
+.quiz-container{
+    background:#a1bcdd;
+    padding:30px;
+    width:500px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Title */
+.quiz-container h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+/* Question block */
+.question{
+    margin-bottom:20px;
+}
+
+.question p{
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+/* Radio labels */
+.question label{
+    display:block;
+    padding:6px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.question label:hover{
+    background:rgba(255,255,255,0.1);
+}
+
+/* Controls (buttons) */
+.controls{
+    display:flex;
+    justify-content:space-between;
+    margin-top:20px;
+}
+
+/* Buttons */
+button{
+    padding:10px 18px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.2s;
+}
+
+/* Individual buttons */
+#prev-btn{
+    background:#6c757d;
+    color:white;
+}
+
+#next-btn{
+    background:#007bff;
+    color:white;
+}
+
+#submit-btn{
+    background:#28a745;
+    color:white;
+}
+
+/* Hover effects */
+button:hover{
+    opacity:0.8;
+}
+
+/* Result box */
+#result{
+    margin-top:20px;
+    padding:15px;
+    background:#1b1b2f;
+    border-radius:8px;
+    text-align:center;
+}
+
+/* Hidden class */
+.hidden{
+    display:none;
+}
