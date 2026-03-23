@@ -5,68 +5,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Character_Style.css">
 </head>
 
 <body>
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="Gallery.html">Gallery</a></li>
-            <li><a href="Weapon.html">Weapon</a></li>
-            <li><a href="Story.html">Story</a></li>
-            <li><a href="AboutMe.html">About Me</a></li>
-        </ul>
-    </nav>
-    <table>
-        <tr>
-            <th>Character Image</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>key attributes</th>
-        </tr>
-        <tr>
-            <td><img src="SourceImg/character images/Zani_Splash_Art.png" alt=""></td>
-            <td>Zani</td>
-            <td>Zani is a 5-star Spectro Mutant Resonator in Wuthering Waves,
-                wielding gauntlets and serving as a security staff member at the Montelli Family's
-                Averardo Bank in Ragunna. </td>
-            <td>Spectro, a damage type that enables her to apply and benefit from the Spectro Frazzle debuff.</td>
-        </tr>
-        <tr>
-            <td><img src="SourceImg/character images/Lupa_Splash_Art.jpg" alt=""></td>
-            <td>Lupa</td>
-            <td>Lupa is a 5-star Fusion Non-congenital Resonator in Wuthering Waves, wielding a broadblade
-                 and hailing from Septimont in Rinascita. </td>
-            <td>5-star, DPS, Fusion Non-congenital Resonator</td>
-        </tr>
-        <tr>
-            <td><img src="SourceImg/character images/Mornye_Splash_Art.jpg" alt=""></td>
-            <td>Mornye</td>
-            <td>Playable Fusion Natural Resonator in Wuthering Waves. She is a researcher for the Spacetrek
-                 Collective and a professor for Exostrider Engineering at Startorch Academy. She was a student
-                  at Startorch 20 years ago before the Void Storm hit Lahai-Roi.
-            . </td>
-            <td> Fusion, enabling her to power up Fusion-based teams.</td>
-        </tr>
-        <tr>
-            <td><img src="SourceImg/character images/Lynae_Splash_Art.png" alt=""></td>
-            <td>lynae</td>
-            <td>Playable Spectro Congenital Resonator in Wuthering Waves. She is a Preparatory Program student at Startorch Academy. Before attending Startorch she was a mercenary from the Lawless Zone in New Federation. In order to escape from the Lawless Zone she stole the identity of the real Lynae—a Fractsidus operative, who was attending Startorch Academy as a spy.</td>
-            <td>Spectro, enabling synergy with Spectro-based teams and debuffs like Photochromic Flux.</td>
-        </tr>
-        <tr>
-            <td><img src="SourceImg/character images/Augusta_Splash_Art.png" alt=""></td>
-            <td>Augusta</td>
-            <td>Playable Electro Congenital Resonator in Wuthering Waves. The fearless Ephor of Septimont with a will of iron, she remains a fiercely resilient yet humble leader despite the immeasurable hardships of her childhood and tenure as a Gladiator. Though a mere mortal, she has mastered the arts of combat, strategy, and her Forte through countless conflicts, reaching heights few others like her have ever attempted to reach.</td>
-            <td>Electro, enabling synergy with Electro-based teams and heavy attacks.</td>
-        </tr>
-        <tr>
-            <td><img src="SourceImg/character images/Iuno_Splash_Art.png" alt=""></td>
-            <td>Iuno</td>
-            <td>Playable Aero Congenital Resonator in Wuthering Waves. She is a prodigious and renowned Priestess of Septimont's Tetragon Temple, charged with delivering prophecies that shape the lives of its citizens. While both blessed and cursed with the power to foretell the futures of others, her responsibilities are contrasted by her cocky, outspoken and rebellious attitude, embodying an eagerness to defy all of fate's cruelest machinations.</td>
-            <td>Aero, enabling synergy with Aero-based teams and Heavy attacks DPS.</td>
-        </tr>
-    </table>
+    
+    <header>
+        <div class="logo"><img src="SourceImg/wuwa_logo.png" alt="Wuthering Waves Logo"></div>
+
+        <nav>
+            <a href="Home.html">Home</a>
+            <a href="Gallery.html">Gallery</a>
+            <a href="Weapon.html">Weapon</a>
+            <a href="Story.html">Story</a>
+            <a href="Quiz.html">Quiz</a>
+            <a href="AboutMe.html">About Me</a>
+        </nav>
+    </header>
+    
+    <main class="character-section">
+
+
+        <!-- RADIO BUTTONS (visually hidden, for CSS state) -->
+        <input type="radio" name="char" id="zani" checked>
+        <input type="radio" name="char" id="lupa">
+        <input type="radio" name="char" id="mornye">
+        <input type="radio" name="char" id="lynae">
+        <input type="radio" name="char" id="augusta">
+        <input type="radio" name="char" id="iuno">
+
+        <!-- CAROUSEL with scroll-snap and ::scroll-button -->
+        <div class="carousel-scroll-wrapper">
+            <div class="carousel-cards" tabindex="0">
+                <div class="card placeholder" aria-hidden="true"></div>
+                <label class="card" for="zani">
+                    <img src="SourceImg/character images/Zani_Splash_Art.png" alt="Zani">
+                    <span class="card-name">Zani</span>
+                </label>
+                <label class="card" for="lupa">
+                    <img src="SourceImg/character images/Lupa_Splash_Art.jpg" alt="Lupa">
+                    <span class="card-name">Lupa</span>
+                </label>
+                <label class="card" for="mornye">
+                    <img src="SourceImg/character images/Mornye_Splash_Art.jpg" alt="Mornye">
+                    <span class="card-name">Mornye</span>
+                </label>
+                <label class="card" for="lynae">
+                    <img src="SourceImg/character images/Lynae_Splash_Art.png" alt="Lynae">
+                    <span class="card-name">Lynae</span>
+                </label>
+                <label class="card" for="augusta">
+                    <img src="SourceImg/character images/Augusta_Splash_Art.png" alt="Augusta">
+                    <span class="card-name">Augusta</span>
+                </label>
+                <label class="card" for="iuno">
+                    <img src="SourceImg/character images/Iuno_Splash_Art.png" alt="Iuno">
+                    <span class="card-name">Iuno</span>
+                </label>
+                <div class="card placeholder" aria-hidden="true"></div>
+            </div>
+        </div>
+
+        <!-- DESCRIPTION (stays below, changes with radio) -->
+        <div class="description">
+            <div class="desc zani">
+                <h2>Zani</h2>
+                <p>Zani is a 5-star Spectro Mutant Resonator in Wuthering Waves,
+                    wielding gauntlets and serving as a security staff member at the Montelli Family's
+                    Averardo Bank in Ragunna.</p>
+                <h4>Key Attributes:</h4>
+                <p>Spectro, a damage type that enables her to apply and benefit from the Spectro Frazzle debuff.</p>
+            </div>
+            <div class="desc lupa">
+                <h2>Lupa</h2>
+                <p>Lupa is a 5-star Fusion Non-congenital Resonator in Wuthering Waves, wielding a broadblade
+                    and hailing from Septimont in Rinascita.</p>
+                <h4>Key Attributes:</h4>
+                <p>5-star, DPS, Fusion Non-congenital Resonator</p>
+            </div>
+            <div class="desc mornye">
+                <h2>Mornye</h2>
+                <p>Playable Fusion Natural Resonator in Wuthering Waves. She is a researcher for the Spacetrek
+                    Collective and a professor for Exostrider Engineering at Startorch Academy. She was a student
+                    at Startorch 20 years ago before the Void Storm hit Lahai-Roi.</p>
+                <h4>Key Attributes:</h4>
+                <p>Fusion, enabling her to power up Fusion-based teams.</p>
+            </div>
+            <div class="desc lynae">
+                <h2>Lynae</h2>
+                <p>Playable Spectro Congenital Resonator in Wuthering Waves. She is a Preparatory Program student at Startorch Academy. Before attending Startorch she was a mercenary from the Lawless Zone in New Federation. In order to escape from the Lawless Zone she stole the identity of the real Lynae—a Fractsidus operative.</p>
+                <h4>Key Attributes:</h4>
+                <p>Spectro, enabling synergy with Spectro-based teams and debuffs like Photochromic Flux.</p>
+            </div>
+            <div class="desc augusta">
+                <h2>Augusta</h2>
+                <p>Playable Electro Congenital Resonator in Wuthering Waves. The fearless Ephor of Septimont with a will of iron, she remains a fiercely resilient yet humble leader despite hardships and her past as a Gladiator.</p>
+                <h4>Key Attributes:</h4>
+                <p>Electro, enabling synergy with Electro-based teams and heavy attacks.</p>
+            </div>
+            <div class="desc iuno">
+                <h2>Iuno</h2>
+                <p>Playable Aero Congenital Resonator in Wuthering Waves. A renowned Priestess of Septimont's Tetragon Temple who delivers prophecies while defying fate.</p>
+                <h4>Key Attributes:</h4>
+                <p>Aero, enabling synergy with Aero-based teams and Heavy attacks DPS.</p>
+            </div>
+        </div>
+
+</main>
 </body>
 
 </html>

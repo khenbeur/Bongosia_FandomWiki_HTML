@@ -1,0 +1,244 @@
+body{
+
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+     background-color: rgb(65, 62, 62);
+    transition: background 0.5s ease;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+.logo img{
+   height: 100%;
+   width: 100%;
+
+}
+header nav {
+    margin: 10px;
+    justify-content: flex-end;
+}
+header nav a{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 5px 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+header nav a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, gold, transparent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+header nav a:hover::after{
+    transform: scaleX(1);
+}
+/* Hide radios */
+input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Layout */
+.character-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px;
+}
+
+/* Carousel scroll wrapper */
+.carousel-scroll-wrapper {
+    flex: 1;              /* take equal space */
+    max-width: 50%;             /* fixed width for left column */
+    height: 500px;              /* control vertical height */
+    overflow-y: auto;           /* vertical scroll */
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;  /* vertical snapping */
+}
+
+/* Carousel cards row */
+.carousel-cards {
+    display: flex;
+    flex-direction: column;     /* 🔥 STACK VERTICALLY */
+    gap: 2em;
+    padding: 1em 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+
+.carousel-cards::-webkit-scrollbar {
+    height: 8px;
+}
+.carousel-cards::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.card {
+    flex: 0 0 auto;         /* remove horizontal sizing */
+    width: 100%;
+    height: 400px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #222;
+    border-radius: 1.5em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    cursor: pointer;
+    scroll-snap-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, z-index 0.3s;
+    opacity: 0.85;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    transform: scale(0.92);
+    z-index: 1;
+}
+
+/* Placeholder cards: invisible but take up space */
+.card.placeholder {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    pointer-events: none;
+    opacity: 0;
+    min-width: 0;
+    padding: 0;
+    height: 20em;
+}
+
+
+/* Focus/active state for accessibility */
+.card:focus, .card:active {
+    outline: 2px solid gold;
+    z-index: 2;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.5em;
+    margin-bottom: 0;
+    box-shadow: none;
+    display: block;
+}
+
+.card-name {
+    color: #fff;
+    font-size: 1.2em;
+    margin-top: 0.5em;
+    letter-spacing: 1px;
+}
+
+/* Highlight active card based on radio */
+#story1:checked ~ .carousel-scroll-wrapper .card[for="story1"],
+#story2:checked ~ .carousel-scroll-wrapper .card[for="story2"],
+#story3:checked ~ .carousel-scroll-wrapper .card[for="story3"],
+#story4:checked ~ .carousel-scroll-wrapper .card[for="story4"],
+#story5:checked ~ .carousel-scroll-wrapper .card[for="story5"],
+#story6:checked ~ .carousel-scroll-wrapper .card[for="story6"],
+#story7:checked ~ .carousel-scroll-wrapper .card[for="story7"] {
+    opacity: 1;
+    transform: scale(1.1);
+    border-color: gold;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.35), 0 0 0 4px gold;
+    z-index: 2;
+}
+
+.card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+
+/* Description box */
+.description {
+    flex: 1;              /* take equal space */
+    max-width: 50%;
+    text-align: left;
+    margin: 0;
+    width: 100%;
+    background: #d89a6a;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 180px;
+    transition: background 0.5s;
+}
+
+/* Hide all descriptions */
+.desc {
+    display: none;
+}
+
+/* Show selected description */
+#story1:checked ~ .description .story1,
+#story2:checked ~ .description .story2,
+#story3:checked ~ .description .story3,
+#story4:checked ~ .description .story4,
+#story5:checked ~ .description .story5,
+#story6:checked ~ .description .story6,
+#story7:checked ~ .description .story7 {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .carousel-cards {
+        gap: 1em;
+    }
+    .card {
+        flex: 0 0 7em;
+        height: 12em;
+        border-radius: 1em;
+    }
+    .card img {
+        height: 100%;
+        border-radius: 1em;
+    }
+    .card.placeholder {
+        height: 12em;
+    }
+    .description {
+        padding: 12px;
+        font-size: 0.95em;
+    }
+}
+
+/* ::scroll-button for browsers that support it */
+.carousel-cards {
+    scroll-behavior: smooth;
+}
+.carousel-cards::scroll-button {
+    display: block;
+    width: 2em;
+    height: 2em;
+    background: gold;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    color: #222;
+    font-size: 1.5em;
+    margin: 0 0.5em;
+    cursor: pointer;
+}
