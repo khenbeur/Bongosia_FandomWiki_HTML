@@ -50,3 +50,124 @@ header nav a::after{
 header nav a:hover::after{
     transform: scaleX(1);
 }
+
+.AboutMe {
+    background-position: center;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 96%);
+    padding: 80px 20px;
+    color: white;
+    min-height: 100vh;
+}
+
+.AboutMe-Grid {
+    display: grid;
+    grid-template-columns: 250px 1fr 200px;
+    grid-template-rows: auto auto;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Positioning Elements */
+.Profile-Area { 
+    grid-column: 1; 
+}
+.Bio-Area {
+     grid-column: 2; 
+}
+.Skills-Box { 
+    grid-column: 3; grid-row: 1; 
+}
+.Projects-Area { 
+    grid-column: 1 / span 2; 
+} /* Spans across profile and bio columns */
+.Tech-Box { 
+    grid-column: 3; grid-row: 2; 
+}
+
+
+.Bio-Text{
+    margin-top: 30px;
+}
+
+.Projects-Area h2{
+    text-align: center;
+    padding: 20px;
+}
+
+/* Visual Styling (Matching your screenshot) */
+.Sidebar {
+    background: linear-gradient(to right, #65cff6, #fda085);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
+
+.Sidebar h3 { 
+    margin-bottom: 20px; 
+    border-bottom: 1px solid white; 
+    padding-bottom: 10px; 
+}
+.Sidebar li { 
+    list-style: none; 
+    padding: 0; 
+    line-height: 2.5; 
+    transition-property: Sidebar ul;
+    transition: 0.3s;
+}
+
+.Sidebar li:hover{
+    background-color: gray;
+}
+
+.Projects-List {
+    background: linear-gradient(to right, #f6d365, #fda085);
+    padding: 30px;
+    border-radius: 15px;
+    line-height: 2;
+    text-align: center;
+}
+
+
+
+.Projects-List p:hover {
+    background-color: gray;
+}
+
+.Profile-Img {
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    border: #65cff6 solid 5px;
+  
+}
+
+/* Typography */
+h1 { 
+    font-size: 2.5rem; 
+    margin-bottom: 5px; 
+}
+.Subtitle { 
+    color: #ccc; 
+    margin-bottom: 15px; 
+}
+.Social-Icons img { 
+    width: 40px; 
+    margin-right: 15px; 
+    cursor: pointer; 
+    transition-duration: Social-Icons img;
+    transition: 0.3s;
+}
+
+.Social-Icons img[alt="GM"] {
+    position: relative;
+    top: -5px; /* Adjust this value to move it higher or lower */
+}
+
+
+.Social-Icons img:hover{
+    transform: translateY(-5px);
+}
